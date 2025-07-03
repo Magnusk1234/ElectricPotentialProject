@@ -5,7 +5,7 @@ from solver import Electric_potential, Electric_field
 from plotting import plot_electric_potential, plot_electric_field
 
 
-def test_potential_only(V0_function, Vc, N, resolution):
+def test_potential(V0_function, Vc, N, resolution):
     x = np.linspace(0, 1, resolution)
     y = np.linspace(0, 1, resolution)
     X, Y = np.meshgrid(x, y)
