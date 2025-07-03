@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from testing import test_potential
+from testing import test_field
 
 from potentials import (
     V0_constant,
@@ -14,11 +15,11 @@ from potentials import (
 
 def main():
     Vc = 1.0
-    N = 10
+    N = 100
     resolution = 10
     test_potential(V0_sinus_2, Vc, N, resolution)
 
-
+    test_field(V0_sinus_2, Vc, N, resolution)
 
 
 

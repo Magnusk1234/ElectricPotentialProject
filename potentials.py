@@ -25,4 +25,3 @@ def V0_gaussian(Vc,x):
 def V0_polynomial_4th(Vc,x):
     return Vc*(1-(x-0.5)**4)
 
-
