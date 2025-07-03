@@ -2,7 +2,7 @@ import numpy as np
 
 
 # constant potential function
-def V0_constant(Vc,x):
+def V0_constant(Vc, x):
     return Vc
 
 # sinus 2 potential function

@@ -3,12 +3,12 @@ from scipy.integrate import quad
 
 
 def Cn(n, V0, Vc):
-    integrand = lambda x:V0(x)*np.sin(n*np.pi*x)
+    integrand = lambda x:V0(Vc,x)*np.sin(n*np.pi*x)
     Cn, _ = quad(integrand, 0, 1)
     return Cn / np.sinh(n*np.pi)
 
 def Electric_potential(x, y, N, V0, Vc):
-    potential = np.zeros(len(x),len(y))
+    potential = np.zeros((len(x),len(y)))
 
     for i in range(1, N+1):
         Cn_value = Cn(i, V0, Vc)
