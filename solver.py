@@ -7,7 +7,7 @@ def Cn(n, V0, Vc):
     Cn, _ = quad(integrand, 0, 1)
     return Cn / np.sinh(n*np.pi)
 
-def V_potential(x, y, N, V0, Vc):
+def Electric_potential(x, y, N, V0, Vc):
     V = np.zeros(len(x),len(y))
 
     for i in range(1, N+1):
@@ -15,3 +15,5 @@ def V_potential(x, y, N, V0, Vc):
         Vn = Cn_value * np.sinh(i * np.pi * y) * np.sin(i * np.pi * x)
         V += Vn
     return V
+
+def 
