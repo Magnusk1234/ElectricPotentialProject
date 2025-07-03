@@ -11,9 +11,12 @@ def Electric_potential(x, y, N, V0, Vc):
     V = np.zeros(len(x),len(y))
 
     for i in range(1, N+1):
-        Cn_value = Cn(n, V0, Vc)
+        Cn_value = Cn(i, V0, Vc)
         Vn = Cn_value * np.sinh(i * np.pi * y) * np.sin(i * np.pi * x)
         V += Vn
     return V
 
-def 
+def Electric_field(x, y, N, V):
+    Ey, Ex = np.gradient(-V, y, x)
+    return Ex, Ey
+
