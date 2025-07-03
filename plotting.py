@@ -9,9 +9,9 @@ def plot_electric_potential(x, y, potential, title='Electric Potential'):
     plt.xlabel('x')
     plt.ylabel('y')
     plt.axis('equal')
-    plt.show()
+    
 
-def plot_electric_field(x, y, Ex, Ey, title='Electric Field'):
+def plot_electric_field(x, y, potential, Ex, Ey, title='Electric Field'):
     plt.figure(figsize=(6, 6))
     plt.quiver(x, y, Ex, Ey, color='black', scale=5)
     plt.title(title)
@@ -19,4 +19,4 @@ def plot_electric_field(x, y, Ex, Ey, title='Electric Field'):
     plt.ylabel('y')
     plt.axis('equal')
     plt.grid()
-    plt.show()
+    
