@@ -3,14 +3,7 @@ import matplotlib.pyplot as plt
 from testing import test_potential
 from testing import test_field
 
-from potentials import (
-    V0_constant,
-    V0_sinus_2,
-    V0_sinus_3,
-    V0_heaviside,
-    V0_gaussian,
-    V0_polynomial_4th
-)
+from potentials import*
 
 
 def main():
