@@ -28,4 +28,5 @@ def plot_electric_field(x, y, potential, Ex, Ey, title='Electric Field'):
     plt.show()
     plt.tight_layout()
     
-    
+    #plot border agiast theorertical values for different 
+
