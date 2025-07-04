@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from testing import test_potential
-from testing import test_field
 
+from analysis import calculate_std
+from testing import test_potential, test_field
 from potentials import*
 
 

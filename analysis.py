@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 from solver import Electric_potential
 from potentials import*
+from plotting import plot_std_values
 
 
 def calculate_std(V0_function, Vc, N_min, N_max, N_interval, resolution,sample_y=1):
@@ -21,7 +22,7 @@ def calculate_std(V0_function, Vc, N_min, N_max, N_interval, resolution,sample_y
         potential_N_slice = potential_N[-1, : ]
         potential_exact = V0_function(Vc, x)
         std_values[i] = np.std(potential_N_slice - potential_exact)
-    #plotting the results
+    plot_std_values(N_values, std_values, title=f'Standard Deviation for {V0_function}')
 
 
 
