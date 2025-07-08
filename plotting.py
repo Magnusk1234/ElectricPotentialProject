@@ -28,14 +28,13 @@ def plot_electric_field(x, y, potential, Ex, Ey, title='Electric Field'):
     plt.show()
     plt.tight_layout()
     
-#plot border agiast theorertical values for different 
 
-#plotting std values for different N values
-def plot_std_values(N_values, std_values, title='Standard Deviation of Potential'):
-    plt.figure(figsize=(8, 5))
-    plt.plot(N_values, std_values, marker='o', linestyle='-', color='b')
-    plt.title(title)
-    plt.xlabel('N (Number of Terms)')
-    plt.ylabel('Standard Deviation')
-    plt.grid()
+def plot_convergence_test(N_values, std_values):
+    plt.figure(figsize=(8, 6))
+    plt.plot(N_values, std_values, marker='o')
+    plt.yscale('log')
+    plt.xlabel('Number of Terms (N)')
+    plt.ylabel('Difference in Potential')
+    plt.title('Convergence Test')
+    plt.grid(True)
     plt.show()
