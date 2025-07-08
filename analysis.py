@@ -2,15 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from solver import Electric_potential
-from plotting import plot_convergence_test
+from plotting import plot_convergence_test, plot_potential_profile_test
 
 
-def convergence_test(V0_function, Vc, N_min, N_max, N_interval, resolution):
+def convergence_test(V0_function, Vc, N_min, N_max, N_num, resolution):
     x = np.linspace(0, 1, resolution)
     y = np.linspace(0, 1, resolution)
     X, Y = np.meshgrid(x, y)
 
-    N_values = np.arange(N_min, N_max + 1, N_interval)
+    N_values = np.linspace(N_min, N_max + 1, N_num, dtype=int)
     std_values = np.zeros(len(N_values))
 
     analytical_potential = V0_function(x, Vc)
@@ -26,22 +26,17 @@ def convergence_test(V0_function, Vc, N_min, N_max, N_interval, resolution):
 
         
 
-def potential_profile_test(V0_function, Vc, N_min, N_max, N_interval, resolution):
+def potential_profile_test(V0_function, Vc, N_min, N_max, N_num, resolution):
 
     x = np.linspace(0, 1, resolution)
     y = np.linspace(0, 1, resolution)
     X, Y = np.meshgrid(x, y)
 
-    N_values = np.arange(N_min, N_max + 1, N_interval)
+    N_values = np.linspace(N_min, N_max + 1, N_num,dtype=int)
+    profiles = {}
 
-    plt.figure(figsize=(8, 6))
-    plt.plot(x, V0_function(x, Vc), label='Analytical Potential', color='black', linewidth=2)
-    plt.title('Electric Potential Comparison')
-    plt.xlabel('x')
-    plt.ylabel('Potential')
-    plt.grid(True)
-    plt.legend()
     for N in N_values:
         potential = Electric_potential(X, Y, N, V0_function, Vc)[-1, :]
-        plt.plot(x, potential, label=f'N={N}')
-    plt.show()
+        profiles[N] = potential
+        #plt.plot(x, potential, label=f'N={N}')
+    plot_potential_profile_test(x, V0_function, Vc, profiles)

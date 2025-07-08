@@ -39,3 +39,14 @@ def plot_convergence_test(N_values, std_values):
     plt.grid(True)
     plt.show()
 
+def plot_potential_profile_test(x, V0_function, Vc, profiles):
+    plt.figure(figsize=(8, 6))
+    plt.plot(x, V0_function(x, Vc), label='Analytical Potential', color='black', linewidth=2)
+    for N, potential in profiles.items():
+        plt.plot(x, potential, label=f'N={N}')
+    plt.title('Electric Potential Comparison')
+    plt.xlabel('x')
+    plt.ylabel('Potential')
+    plt.grid(True)
+    plt.legend()
+    plt.show()

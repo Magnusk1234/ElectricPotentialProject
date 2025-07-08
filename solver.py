@@ -3,8 +3,7 @@ from scipy.integrate import quad
 
 
 def Cn(n, V0_function, Vc):
-    integrand = lambda x:V0_function(x, Vc)*np.sin(n*np.pi*x)
-    Cn, _ = quad(integrand, 0, 1)
+    Cn, _ = quad(lambda x:2*V0_function(x, Vc)*np.sin(n*np.pi*x), 0, 1)
     return Cn / np.sinh(n*np.pi)
 
 def Electric_potential(X, Y, N, V0_function, Vc):
