@@ -38,3 +38,4 @@ def plot_convergence_test(N_values, std_values):
     plt.title('Convergence Test')
     plt.grid(True)
     plt.show()
+
