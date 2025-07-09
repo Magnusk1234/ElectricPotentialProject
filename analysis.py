@@ -5,13 +5,27 @@ from solver import electric_potential
 from plotting import plot_convergence_test, plot_potential_profile_test
 
 
-def convergence_test(V0_function, N_min, N_max, N_num, resolution):
+def convergence_analysis(V0_function, N_min, N_max, N_num, resolution):
+    """    
+    Test the convergence of the numeric solution of the electric potential by comparing it to the analytical solution.
+    Parameters:
+        V0_function (function): Boundary condition function V0(x).
+        N_min (int): Minimum number of Fourier terms.
+        N_max (int): Maximum number of Fourier terms.
+        N_num (int): Number of different N values to test.
+        resolution (int): Resolution for the grid along x and y axes.
+    """ 
+
+    # Create a grid of points in the x and y directions
     x = np.linspace(0, 1, resolution)
     y = np.linspace(0, 1, resolution)
     X_grid, Y_grid = np.meshgrid(x, y)
 
+    # Generate a range of N values for the convergence test
     N_values = np.linspace(N_min, N_max + 1, N_num, dtype=int)
     std_values = np.zeros(len(N_values))
+
+    # Calculate the analytical potential for comparison
     analytical_potential = V0_function(x)
 
     for i in range(len(N_values)):
@@ -23,17 +37,42 @@ def convergence_test(V0_function, N_min, N_max, N_num, resolution):
 
         
 
-def potential_profile_test(V0_function, N_min, N_max, N_num, resolution):
+def potential_profile_analysis(V0_function, N_min, N_max, N_num, resolution):
+    """
+    Test the potential profile at the border for different values of N.
+    Parameters:
+        V0_function (function): Boundary condition function V0(x).
+        N_min (int): Minimum number of Fourier terms.
+        N_max (int): Maximum number of Fourier terms.
+        N_num (int): Number of different N values to test.
+        resolution (int): Resolution for the grid along x and y axes.
+    """
 
+    # Create a grid of points in the x and y directions
     x = np.linspace(0, 1, resolution)
     y = np.linspace(0, 1, resolution)
     X_grid, Y_grid = np.meshgrid(x, y)
 
+    # Generate a range of N values for the convergence test
     N_values = np.linspace(N_min, N_max + 1, N_num,dtype=int)
-    profiles = {}
+    profiles = {} 
 
-    for N in N_values:
-        potential = electric_potential(X_grid, Y_grid, N, V0_function)[-1, :]
-        profiles[N] = potential
-        plt.plot(x, potential, label=f'N={N}')
+    for i in range(len(N_values)):
+        potential = electric_potential(X_grid, Y_grid, N_values[i], V0_function)[-1, :]
+        profiles[N_values[i]] = potential   #store the potential profile for each N value
     plot_potential_profile_test(x, V0_function, profiles)
+
+
+
+def full_analysis(V0_function, N_min, N_max, N_num, resolution):
+    """
+    Perform full analysis including convergence and potential profile analysis.
+    Parameters:
+        V0_function (function): Boundary condition function V0(x).
+        N_min (int): Minimum number of Fourier terms.
+        N_max (int): Maximum number of Fourier terms.
+        N_num (int): Number of different N values to test.
+        resolution (int): Resolution for the grid along x and y axes.
+    """
+    convergence_analysis(V0_function, N_min, N_max, N_num, resolution)
+    potential_profile_analysis(V0_function, N_min, N_max, N_num, resolution)

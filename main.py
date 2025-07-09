@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from analysis import convergence_test, potential_profile_test
+from analysis import convergence_analysis, potential_profile_analysis, full_analysis
 from testing import electric_potential_test, electric_field_test
 from potentials import*
 

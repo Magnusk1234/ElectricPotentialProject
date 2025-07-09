@@ -24,7 +24,7 @@ def plot_electric_potential_3D_test(X_grid, Y_grid, potential, title='Electric P
 
 def plot_electric_potential_test(x, y, potential, title='Electric Potential'):
     """
-    Plot the electric potential as a contour plot.
+    Plot the electric potential in 2D as a contour plot.
     Parameters:
         x (np.ndarray): 1D array of x-coordinates.
         y (np.ndarray): 1D array of y-coordinates.
