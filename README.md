@@ -3,14 +3,32 @@
 ## Description
 This project solves the **Laplace equation** to simulate the electric potential in a square, hollow 2D tube. A numerical solution will be obtained using a fourier sine series
 
-## Theory 
+## Theory
+The dimensionless Laplace equation is given by:
+-figure laplace
 
-\[
-\frac{\partial^2 V}{\partial \xi^2} + \frac{\partial^2 V}{\partial \eta^2} = 0
-\]
+and for this project the boundrary conditions will be:
+-figure boundrary
 
-boudrary
-solving pde
+
+The solution to the equation is derived using seperation of variables
+given by fourier sine series
+- solution
+
+with fourier coefficents \( C_n \) are computed using:
+- C_n formula
 
 numerical aproximation 
-coeffi
+
+How to run
+
+## Structure
+the project consists of 6 python files
+
+- `main.py`: running simulation
+- `solver.py`: Contains functions for solving the 2D Laplace equation using Fourier series to compute the potential and electric field.
+- `potentials.py`: Defines different possible boundrary conditions \(V_0(x)\) used in the simulation.
+- `analysis.py`
+- `plotting.py`
+- `testing.py`
+- `README.md`
