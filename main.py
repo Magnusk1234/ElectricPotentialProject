@@ -12,13 +12,13 @@ def main():
     resolution = 100
     N_min = 1
     N_max = 50
-    N_num = 5
+    N_num = 10
     #electric_potential_test(V0_sinusoidal_2, N, resolution)
 
-    electric_field_test(V0_sinusoidal_2, N, resolution)
-    #convergence_test(V0_constant, N_min, N_max, N_num, resolution)
+    #electric_field_test(V0_sinusoidal_2, N, resolution)
+    convergence_analysis(V0_constant, N_min, N_max, N_num, resolution)
 
-    #potential_profile_test(V0_heaviside, N_min, N_max, N_num, resolution)
+    #potential_profile_analysis(V0_heaviside, N_min, N_max, N_num, resolution)
 
     #more alternatives for actions in main + saving plots/data
 

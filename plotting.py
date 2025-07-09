@@ -75,7 +75,6 @@ def plot_convergence_test(N_values, std_values):
     """
     plt.figure(figsize=(8, 6))
     plt.plot(N_values, std_values, marker='o')
-    plt.yscale('log')
     plt.xlabel('Number of Terms (N)')
     plt.ylabel('Difference in Potential')
     plt.title('Convergence Test')
