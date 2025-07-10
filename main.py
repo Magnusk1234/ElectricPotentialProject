@@ -2,9 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import argparse
 
-from analysis import convergence_analysis, potential_profile_analysis, full_analysis
-from testing import electric_potential_test, electric_field_test, full_test
+
 from potentials import*
+from analysis import convergence_analysis, potential_profile_analysis, fourier_accuracy_analysis
+from simulation import electric_potential_simulation, electric_field_simulation, electric_potential_and_field_simulation
+
 
 
 def main():
@@ -18,7 +20,7 @@ def main():
     #electric_potential_test(V0_sinusoidal_2, N, resolution)
 
     #electric_field_test(V0_sinusoidal_2, N, resolution)
-    convergence_analysis(V0_constant, N_min, N_max, N_num, resolution)
+    #convergence_analysis(V0_constant, N_min, N_max, N_num, resolution)
 
     #potential_profile_analysis(V0_heaviside, N_min, N_max, N_num, resolution)
 

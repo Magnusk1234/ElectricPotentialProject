@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def plot_electric_potential_3D_test(X_grid, Y_grid, potential, title='Electric Potential in 3D'):
+def plot_3D_electric_potential_simulation(X_grid, Y_grid, potential, title='Electric Potential in 3D'):
     """
     Plot the electric potential in 3D.
     Parameters:
@@ -22,7 +22,7 @@ def plot_electric_potential_3D_test(X_grid, Y_grid, potential, title='Electric P
     plt.show()
 
 
-def plot_electric_potential_test(x, y, potential, title='Electric Potential'):
+def plot_2D_electric_potential_simulation(x, y, potential, title='Electric Potential'):
     """
     Plot the electric potential in 2D as a contour plot.
     Parameters:
@@ -41,7 +41,7 @@ def plot_electric_potential_test(x, y, potential, title='Electric Potential'):
     plt.show()
     
 
-def plot_electric_field_test(x, y, potential, Ex, Ey, title='Electric Field'):
+def plot_electric_field_simulation(x, y, potential, Ex, Ey, title='Electric Field'):
     """
     Plot the electric field as a contour plot with streamlines.     
     Parameters:
