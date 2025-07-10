@@ -66,7 +66,7 @@ def potential_profile_analysis(V0_function, N_min, N_max, N_num, resolution):
 
 
 
-def full_analysis(V0_function, N_min, N_max, N_num, resolution):
+def fourier_accuracy_analysis(V0_function, N_min, N_max, N_num, resolution):
     """
     Perform full analysis including convergence and potential profile analysis.
     Parameters:
