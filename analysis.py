@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from solver import electric_potential
-from plotting import plot_convergence_test, plot_potential_profile_test
+from plotting import plot_convergence_analysis, plot_potential_profile_analysis
 
 
 def convergence_analysis(V0_function, N_min, N_max, N_num, resolution):
@@ -34,7 +34,7 @@ def convergence_analysis(V0_function, N_min, N_max, N_num, resolution):
         difference = np.array(numeric_potential) - np.array(analytical_potential)   # Calculate the difference between numeric and analytical potential
         std_values[i] = np.std(difference)  # Calculate the standard deviation of the difference
 
-    plot_convergence_test(N_values, std_values)     
+    plot_convergence_analysis(N_values, std_values)     
 
         
 
@@ -62,7 +62,7 @@ def potential_profile_analysis(V0_function, N_min, N_max, N_num, resolution):
     for i in range(len(N_values)):
         potential = electric_potential(X_grid, Y_grid, N_values[i], V0_function)[-1, :] # get the numeric potential at y=1
         profiles[N_values[i]] = potential   #store the potential profile for each N value
-    plot_potential_profile_test(x, V0_function, profiles)
+    plot_potential_profile_analysis(x, V0_function, profiles)
 
 
 

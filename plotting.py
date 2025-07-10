@@ -66,7 +66,7 @@ def plot_electric_field_test(x, y, potential, Ex, Ey, title='Electric Field'):
     plt.tight_layout()
     
 
-def plot_convergence_test(N_values, std_values):
+def plot_convergence_analysis(N_values, std_values):
     """
     Plot the convergence test results.  
     Parameters:
@@ -82,7 +82,7 @@ def plot_convergence_test(N_values, std_values):
     plt.show()
 
 
-def plot_potential_profile_test(x, V0_function, profiles):
+def plot_potential_profile_analysis(x, V0_function, profiles):
     """    
     Plot the potential profiles at the border for different N values.
     Parameters:     
