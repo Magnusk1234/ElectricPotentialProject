@@ -32,4 +32,8 @@ the project consists of 6 python files:
 - `potentials.py`: Defines different possible boundrary conditions \(V_0(x)\) used in the simulation.
 - `analysis.py`: 
 - `plotting.py`: Generates various plots for electric potential and electric field tests. Along with plots for analysis of convergence and potential profiles for different N values.
-- `testing.py`: Functions to visually test the correctness of the potential and electric field calculations.
+- `simulation.py`: Functions to simulate the potential and electric field.
+- `testing.py`: 
+
+
+## Refrences

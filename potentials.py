@@ -1,5 +1,9 @@
 import numpy as np
 
+# 0 potential function
+def V0_zero(x):
+    return np.zeros_like(x)
+
 # Constant potential function
 def V0_constant(x):
     return 1

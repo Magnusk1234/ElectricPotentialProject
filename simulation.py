@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 from solver import electric_potential, electric_field
 from plotting import plot_3D_electric_potential_simulation, plot_2D_electric_potential_simulation, plot_electric_field_simulation
 
@@ -21,7 +22,7 @@ def electric_potential_simulation(V0_function, N, resolution):
 
     # Calculate the electric potential and plot the results
     potential = electric_potential(X_grid, Y_grid, N, V0_function)
-    plot_3D_electric_potential_simulation(x, y, potential, title=f'Potential: {V0_function.__name__}')
+    plot_3D_electric_potential_simulation(X_grid, Y_grid, potential, title=f'Potential: {V0_function.__name__}')
     
 
 def electric_field_simulation(V0_function, N, resolution):

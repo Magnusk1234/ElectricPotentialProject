@@ -17,7 +17,8 @@ def main():
     N_min = 1
     N_max = 50
     N_num = 10
-    #electric_potential_test(V0_sinusoidal_2, N, resolution)
+
+    electric_potential_simulation(V0_constant, N, resolution)
 
     #electric_field_test(V0_sinusoidal_2, N, resolution)
     #convergence_analysis(V0_constant, N_min, N_max, N_num, resolution)
