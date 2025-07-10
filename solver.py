@@ -28,7 +28,6 @@ def electric_potential(X_grid, Y_grid, N, V0_function):
     Returns:
         np.ndarray: 2D array of electric potential values.
     """
-
     
     potential = np.zeros((len(X_grid),len(Y_grid)))
 

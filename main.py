@@ -1,12 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import argparse
 
 from analysis import convergence_analysis, potential_profile_analysis, full_analysis
-from testing import electric_potential_test, electric_field_test
+from testing import electric_potential_test, electric_field_test, full_test
 from potentials import*
 
 
 def main():
+
     
     N = 100
     resolution = 100
@@ -24,5 +26,9 @@ def main():
 
     
     #test_field(V0_sinusoidal_2, N, resolution)
+
+
+
+
 if __name__ == "__main__":
     main() 

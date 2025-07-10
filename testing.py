@@ -43,3 +43,15 @@ def electric_field_test(V0_function, N, resolution):
     Ex, Ey = electric_field(x, y, potential)
     plot_electric_field_test(x, y, potential, Ex, Ey, title=f'Field: {V0_function.__name__}')
     
+    
+def visualize_electric_potential_and_field_test(V0_function, N, resolution):
+    """
+    Full test of the electric potential and field given a boundary condition function V0(x).
+    Parameters:
+        V0_function (function): Boundary condition function V0(x).
+        N (int): Number of Fourier terms to use.
+        resolution (int): Resolution for the grid along x and y axes.
+    """
+    
+    electric_potential_test(V0_function, N, resolution)
+    electric_field_test(V0_function, N, resolution)
