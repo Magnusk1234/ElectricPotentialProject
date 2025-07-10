@@ -1,5 +1,6 @@
-#import pytest
+import pytest
 import numpy as np
+import subprocess
 
 from potentials import*
 from solver import Cn, electric_potential, electric_field
@@ -68,3 +69,5 @@ def test_electric_field_zero_gradient():
     
     assert np.allclose(Ex, 0, atol=1e-10), "Electric field Ex should be zero everywhere for V0_zero"
     assert np.allclose(Ey, 0, atol=1e-10), "Electric field Ey should be zero everywhere for V0_zero"
+
+

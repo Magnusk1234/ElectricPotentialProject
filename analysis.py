@@ -38,7 +38,7 @@ def convergence_analysis(V0_function, N_min, N_max, N_num, resolution):
 
         
 
-def potential_profile_analysis(V0_function, N_min, N_max, N_num, resolution):
+def electric_potential_profile_analysis(V0_function, N_min, N_max, N_num, resolution):
     """
     Analyzes the potential profile at the border for different values of N.
     Parameters:
@@ -79,4 +79,4 @@ def fourier_accuracy_analysis(V0_function, N_min, N_max, N_num, resolution):
 
     # Perform convergence analysis and potential profile analysis
     convergence_analysis(V0_function, N_min, N_max, N_num, resolution)
-    potential_profile_analysis(V0_function, N_min, N_max, N_num, resolution)
+    electric_potential_profile_analysis(V0_function, N_min, N_max, N_num, resolution)
