@@ -57,11 +57,10 @@ def plot_electric_field_simulation(x, y, potential, Ex, Ey, title='Electric Fiel
     plt.figure(figsize=(6, 6))
     plt.contourf(x, y, potential, levels=50, cmap='plasma')
     plt.colorbar(label='Potential')
-    plt.streamplot(X_grid, Y_grid, Ex, Ey, color='white', linewidth=1)
+    plt.streamplot(X_grid, Y_grid, Ex, Ey, color='black', linewidth=1)
     plt.title(title)
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.axis('equal')
     plt.show()
     plt.tight_layout()
     

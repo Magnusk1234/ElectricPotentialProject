@@ -43,6 +43,12 @@ The electric field can then be calculated as the negative gradient of the potent
 
 </div>
 
+## Example
+Here is an example of how the electric potential looks like for a sinusoidal potential with a frequency of 2π along the top edge, using 10 Fourier terms and a grid resolution of 100:
+<div align="center">
+<img src="figures/potential.png" alt="Simulation example" width="500"/>
+</div>
+
 ## How to run the project
 This is how you run the project:
 1. Make sure you have the required Python packages installed:  **`numpy`, `matplotlib`, `scipy`, and `pytest`**.
