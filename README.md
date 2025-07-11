@@ -38,10 +38,10 @@ To determine the Fourier coefficent $C_n$, we can apply **Fourier's trick** to i
 By combining the Fourier series for $V(x,y)$ and the expression for $C_n$, we can approximate the electric potential in the region by using a finite number of Fourier terms $N$. Since we know the analytical potential at the border, we can compare the numerical solution with the analytical one to analyze the convergence of the numerical solution toward the analytical one as $N$ increases. This is explored in the `analysis.py` file.
 
 The electric field can then be calculated as the negative gradient of the potential:
+<div align="center">
 <img src="figures/electric_field.png" alt="Electric field" width="250"/>
 
-
-
+</div>
 
 ## How to run the project
 This is how you run the project:
@@ -52,27 +52,24 @@ You can choose to run a **simulation**, or **analysis**. Both have default param
 
 ### Simulation
 The simulation will calculate the electric potential and electric field for a given boundary condition function $V_0(x)$
-- To run a simulation with the default parameters, you can use the command: `--simulate`:
-    - `--potential`: `constant` 
-    - `--resolution`: `100`
-    - `--N`: `10`
+- You will asked to provide the potential function you want to use. The available options are: `zero`, `constant`, `sin`, `step`, and `gaussian`. You can also set the number of Fourier terms $N$ and the grid resolution. 
+- If you do not provide any input, the default values will be used: `constant` potential function, `N=10`, and `resolution=100`.
+
 
 
 ### Analysis
 The analysis compares the numerical solution with the analytical one, and shows how the accuracy improves as the number of Fourier terms increases.
-- To run the analysis with default parameters, you can use the command: `--analyze`:
-    - `--potential`: `constant`
-    - `--resolution`: `100`
-    - `--N_min`: `1`
-    - `--N_max`: `50`
-    - `--N_num`: `10`
+- You will be asked to provide the potential function you want to use. The available options are: `zero`, `constant`, `sin`, `step`, and `gaussian`. 
+- You can also set the minimum and maximum number of Fourier terms $N_{min}$ and $N_{max}$, the number of points to calculate in this range $N_{num}$, and the grid resolution.
+- If you do not provide any input, the default values will be used: `step` potential function, `N_min=1`, `N_max=50`, `N_num=10`, and `resolution=100`.
 
-### Combined Simulation and Analysis
-- To run both the simulation and analysis with default parameters, you can use the command: `--simulate` `--analyze`.
+
+
+
 
 ## Structure
 The project consists of the following Python files:
-- `main.py`: Starts the program using a command-line interface (CLI), allowing the user to choose whether to run a simulation or an analysis. The user can also set parameters such as grid resolution and which boundary condition function to use.
+- `main.py`: Starts the program using an interactive command-line interface (CLI), allowing the user to choose whether to run a simulation or an analysis. The user can also set parameters such as grid resolution and which boundary condition function to use.
 - `solver.py`: Solves the 2D Laplace equation using a Fourier series to calculate the electric potential. It also calculates the electric field by taking the gradient of the potential.
 - `potentials.py`: Containes different boundrary condition functions $V_0(x)$ used in the simation.
 - `simulation.py`: Runs the simulation of the electric potential and the electric field. Using functions from `solver.py` and the selected parameters.
